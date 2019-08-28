@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment 2</title>
+    <style>
+        body {
+            max-width: 90%;
+            margin: 1em auto;
+            font-family: helvetica, sans-serif;
+        }
+        .description h2 {
+            margin: 1em auto;
+            text-align: center;
+        }
+        .description p {
+            max-width: 90%;
+            margin: 1em auto;
+            line-height: 1.2;
+        }
+        .main {
+            padding: 1em;
+            background-color: #f2f2f2;
+            border: 1px solid #000;
+            margin: 0.5em 0;
+        }
+        .problem {
+            margin: 0.78em 0;
+        }
+        .word_problems {
+            margin: 0.78em 0;
+        }
+        .word_problems p {
+            padding: 0.2em;
+            margin-left: 1em;
+        }
+        .problem p:nth-child(2) {
+            font-weight: bold;
+            padding: 1.5em;
+        }
+        .problem p:nth-child(3) {
+            font-weight: bold;
+            padding: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="description">
+        <h2>Assignment 2: JavaScript Syntax, Variables, and Operators</h2>
+
+        <p>To complete this assignment, open up this document in a text editor and complete the questions in each ".problem" div</p>
+        <br>
+        <p>Anything you log to the console with <code>console.log()</code> will display in the JavaScript Console in your browser when you load this page.  The JavaScript Console is located in the Developer Console.  Right click on this page and choose "inspect".  In the toolbar that pops up at the right or bottom of your browser, choose the tab for "Console."  You will see anything logged to the console here.</p>
+        <br>
+        <p>Feel free to use resources like the <a href="https://www.w3schools.com/js/default.asp">w3 Schools JavaScript reference.</a></p>
+    </div>
+    <div class="main">
+        <div class="word_problems">
+            <p>In your own words, define what "statement", "variable", "Operator" and "array" mean in javascript.  Make your answers (strings) display in the appropriate p elements by completing the code between the script tags starting on line 65. You can look this up on W3 schools or another resource and paraphrase.
+            </p>
+            Statement:<p id="statement"></p>
+            Variable:<p id="variable"></p>
+            Operator: <p id="operator"></p>
+            Array: <p id="array"></p>
+            
+            <script>//code for word problems.   
+            document.getElementById("statement").innerHTML = "A javascript statement is a segment of code that tells the computer to perform some sort of action, whether it is to assign a value to a variable or perform some sort of operation.";
+            document.getElementById("variable").innerHTML = "A variable is an object that can contain a data value or values that can vary. The data values an be of different types.";
+            document.getElementById("operator").innerHTML = "Operators are parts of a statement that can manipulate a data value of a variable. This includes assigning a value to a variable or manipulating the value of the variable.";
+            document.getElementById("array").innerHTML = "An array is a type of variable that can hold multiple values in a singular variable.";
+            </script>
+        
+        </div>
+        <div class="problem 1">
+            <p>1. Complete the code between the script tags to create a variable called "x".  Assign x the value "hello world." Display the value of x in the element with the id answer1.  Log the value of x to the console.</p>
+            <p id="answer1"></p>
+            
+            <script>
+                //complete the code
+                var x ='hello world';
+                document.getElementById("answer1").innerHTML = x;
+                console.log("x is: " + x);
+            </script>
+        </div>
+        <div class="problem 2">
+            <p>2.  Complete the code between the script tags below.  Create two variables called "a" and "b" and assign numbers to the value of each. Add the values of a and b using the addition operator and display this value in the element with the id answer2. 
+            </p>
+            <p id="answer2"></p>
+            <script>
+              var a = Math.floor(Math.random(0,1000) * 1001);
+              var b = Math.ceil(Math.random(0,1000) *(1000+1));
+              var c = a + b;
+              document.getElementById("answer2").innerHTML = "a=" + a + " + b=" + b + " Yields the result: " + c;
+            </script>
+        </div>
+         <div class="problem 3">
+            <p>3.  Complete the code between the script tags below. Display any string you would like to in the div with the id answer3.  Do NOT store the value of this string in a variable. 
+            </p>
+            <p id="answer3"></p>
+            <script>
+                document.getElementById("answer3").innerHTML = "This string better not be stored in a variable."
+            
+            </script>
+             <div class="problem 4">
+                <p>4. Complete the code between the script tags below. Write a single line comment
+                 </p>
+                 <script>
+                   // This is a single line comment..... i dont see any other code to complete?
+                     
+                 </script>
+             </div>
+              <div class="problem 5">
+                <p>5. Complete the code between the script tags below. Write a multi-line comment.
+                 </p>
+                 <script>
+                   /* This is a 
+                   multiple line comment
+                   again dont see any other code to complete.
+                   */
+                     
+                 </script>
+             </div>
+             <div class="problem 6">
+                <p>6. Complete your code between the script tags below. Create a variable and assign it the value 6.  Create another variable and assign it any value you would like.  Using <a href="https://www.w3schools.com/js/js_assignment.asp">assignment operators</a>, change the value of the first variable to the value of both variables multiplied together. Display the new value of the first variable in the div with the id answer6.  On the next line log this value to the console.</p>
+                 <p id="answer6"></p>
+                 <script>
+                  var six = 6;
+                  var seven = 7;
+                  var six = six * seven;
+                  document.getElementById("answer6").innerHTML = six;
+                  console.log(six);
+                     
+                 </script>
+             </div>
+             <div class="problem 7">
+                <p>7.  Write two variables that store two strings of any value you'd like.  Concatenate these strings and display the concatenated value in the element with the id answer7.
+                 </p>
+                 <p id="answer7">
+                 </p>
+                 <script>
+                    var str_a = "This is";
+                    var str_b = " a concatenated string.";
+                    document.getElementById("answer7").innerHTML = str_a + str_b;
+                 </script>
+             </div>
+             <div class="problem 8">
+                <p>8. Complete the code between the script tags below to display the value output by myFunction() when the button is clicked.
+                 </p>
+                 <button id="myButton" onclick="myFunction()">Click Me!</button>
+                 <script>
+                     function myFunction() {
+                      var a = "myButton was just clicked and myFunction() was executed.";
+                      var p = document.createElement("P");
+                      var t = document.createTextNode(a);
+                      p.appendChild(t);
+                      // Was trying to append p to problem 8 but not using jquery makes it annoying
+                       document.getElementById("myButton").innerHTML = a;
+                     };
+                 </script>
+             </div>
+             <div class="problem 9">
+                <p>BONUS POINTS (2): Complete your code between the script tags below.  Create an <a href="https://www.w3schools.com/js/js_objects.asp">Object</a> called "person" with an object literal declaration.  Give this object firstName, lastName and age properties and assign these any values you would like.  Display the person.firstName in the element with the id bonus.  For an extra point, display the "typeof" object person is in the element with the id bonus2.
+                 </p>
+                 <p id="bonus"></p>
+                 <p id="bonus2"></p>
+                 <script>
+                  var person = {firstName:"Jason", lastName:"Akers", age:"24"};
+                   document.getElementById("bonus").innerHTML = person.firstName;
+                   document.getElementById("bonus2").innerHTML = typeof(person);
+                 </script>
+             </div>
+        </div>
+    </div>
+    
+    
+    
+    </body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Jason Akers</title>
+    
+    <link rel="stylesheet" href="styles/animate.css">
+    <link rel="stylesheet" href="bootstrap-4.2.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/flickity.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Just+Another+Hand' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Lato|Pacifico" rel="stylesheet">
+    
+    
+  </head>
+  <nav class="navbar navbar-expand-sm navbar-custom fixed-top">
+      <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
+        
+        <ul class="navbar-nav ml-auto text-center">
+            <li class="nav-item active">
+                <a class="nav-link" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#third">Blog</a>
+            </li>
+        </ul>
+      </div>
+      <div class="mx-auto my-2 order-0 order-md-1 position-relative">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+          <p>Toggle</p>
+        </button>
+        <div class="home_container">
+        <a href="#top">
+         <img src="images/home-button.png" id="home" class="rounded-circle">
+          <div class="centered">
+            <h4>Return Home</h4>
+          </div>
+          </a>
+        </div>
+      
+      </div>
+      <div class="navbar-collapse collapse w-100 dual-collapse2 order-2 order-md-2">
+        <ul class="navbar-nav mr-auto text-center">
+            <li class="nav-item">
+                <a class="nav-link" href="https://duke-compsci290-spring2018.github.io/assignments-portfolio-jda32/">CSS 290</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#bottom">Contact</a>
+            </li>
+        </ul>
+      </div>
+    </nav>
+  <body>
+    <div id="top"></div>
+    <div class="container-fluid"\>
+      <div class="row" id="about">
+        <div class="col-md-12 text" id="headline">
+          <h1>JASON AKERS</h1>
+        </div>
+        <div class="col-sm-6" id="info">
+          <h2>About Me</h2>
+          <p>I am a senior majoring in Computer Science and am from Yorktown, Virginia. In my spare time I like to watch sports, especially Duke basketball. I have black tented for all four years now and have been in the top ten tents each year. If its not basketball season I tend to play video games or read novels.</p>
+          <h2>Why Javascript</h2>
+          <p>After Duke I would like to go into web development, probably working for some company but would love to work as a freelance web developer and sell websites to companies. I have a background in javascript but have absolutely no sense of combining useful or complex javascript with web design to make the website visually pleasing. As such I want to learn how to make a website(s) that is/are visually pleasing and marketable to clients, as well as what makes a website marketable that is also operatable by the prospective client. Really need brushing up on my CSS/Bootstrap.</p>
+        </div>
+        <div class="col-sm-6" id="profile">
+          <img src="images/Profile%20Pic.jpg">
+        </div>
+      </div>
+      <div class="row" id="portfolio">
+        <div class="col-md-12" id="portfolio-header">
+          <h1>Portfolio</h1>
+        </div>
+        <div class="col-md-12" id="filter">
+          <div class="button-group filter-button-group">
+            <button data-filter="*">Show All</button>
+            <button data-filter=".6">Less Than 6</button>
+          </div>
+        </div>
+        <div class="col-md-12" id="masonry">
+          <div class="grid">
+            <div class="grid-sizer"></div>
+            <a href="assignments/assignment2.html">
+              <div class="grid-item ISS_241 6">
+                ISS241L Assignment 2
+                <iframe src="assignments/assignment2.html"></iframe>
+              </div>
+            </a>
+            <a href="assignments/assignment3.html">
+              <div class="grid-item ISS_241 6">
+                ISS241L Assigment 3
+                <iframe src="assignments/assignment3.html"></iframe>
+              </div>
+            </a>
+            <a href="assignments/assignment4.html">
+              <div class="grid-item ISS_241 6">
+                ISS241L Assignment 4
+                <iframe src="assignments/assignment4.html"></iframe>
+              </div>
+            </a>
+            <a href="assignments/assignment5.html">
+              <div class="grid-item grid-item--width2 ISS_241 6">
+                ISS241L Assignment 5
+                <iframe src="assignments/assignment5.html"></iframe>              </div>
+            </a>
+            <a href="assignments/assignment6.html">
+              <div class="grid-item grid-item--width2 ISS_241 6">
+                ISS241L Assignment 6
+                <iframe src="assignments/Assignment6.html"></iframe>
+              </div>
+            </a>
+            <a href="p5_demo.html">
+              <div class="grid-item ISS_241">
+                ISS241L Assignment 10
+                <iframe src="p5_demo.html"></iframe>
+              </div>
+            </a>
+            <a href="p5_partTwo/p5_partTwo.html">
+              <div class="grid-item ISS_241">
+                ISS241L Assignment 11
+                <iframe src="p5_partTwo/p5_partTwo.html"></iframe>
+              </div>
+            </a>
+            <a href="games/game.html">
+                <div class="grid-item ISS_241">
+                    FINAL PROJECT
+                    <iframe src="games/game.html"></iframe>
+                </div>
+            </a>
+            <div class="grid-item ISS_241">8</div>
+            <div class="grid-item ISS_241">9</div>
+            
+           
+          </div>
+        </div>
+      </div>
+      <div class="row" id="third">
+        <div class="col-md-12" id="blog-header">
+          <h1>Blog</h1>
+        </div>
+        <div class="col-md-12" id="carousel-container">
+          <div class="main-carousel" data-flickity='{"draggable":false}'>
+            <div class="carousel-cell">
+              <h2>What makes this page work?</h2>
+              <p>Normally I make sites that have a multitud of webpages, so this was my first attempt at making a single-page website. For basic libraries, I utilized bootstrap for the top navigation bar and for responsiveness. I then used a jquery function along with animate in order to create the scrolling effect. The scrolling effect should be a constant speed no matter from and to where you are going to on the webpage. <br><br>
+                
+              For pre-defined js libraries, I used the following libraries. First, a combination of <a href="https://masonry.desandro.com/">Masonry</a> and <a href="https://isotope.metafizzy.co/">Isotope</a> in order to create my <a href="#portfolio">Portfolio</a> section. Masonry is pretty much used as a display option for Isotope in this scenario, where I just change the CSS of the cells to get it to look correct. Isotope needed to be initialized through jQuery, and then utlilizes jQuery on a button press in order to filter out selections. Its much easier frankly than me having to go and create a jQuery function manually that adds a hidden or deletes that css. This will be used more in depth at a later time, specifically when I add my personal websites as well as other class's assignments to the mosaic. <br><br>
+                
+              The blog utilizes a carousel javascript library called <a href="https://flickity.metafizzy.co/">Flickity</a> which creates responsive carousels. Flickity is initialized through a simple jQuery command. It operates by utilizing a preset css and js package, in which js functions can be changed as well as of course overwriting the css. Specifically, I designate a container dom which will be where the carousel operates and the library will reference, and then container cells within that dom that the library manipulates.
+              </p>
+            </div>
+            <div class="carousel-cell">
+              <h2>Example Blog Post Title</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id vehicula odio, eu vehicula ante. Aenean orci tortor, elementum nec tellus placerat, accumsan aliquet tortor. Ut sed magna nec felis fringilla volutpat. Aliquam lacinia turpis id metus porta finibus. Nunc malesuada sem eu massa euismod aliquet. Praesent nisl enim, luctus et arcu et, maximus tristique arcu. Integer quis consequat ipsum. Morbi non eros id purus elementum accumsan. Integer rhoncus iaculis tempor. Suspendisse potenti. Nullam fermentum turpis eu arcu ultricies dapibus. Nullam placerat gravida mattis.
+
+                Nullam in volutpat purus. Curabitur pharetra mauris neque, id laoreet nisi ultricies pretium. Praesent commodo, ligula quis vulputate consectetur, lacus ex rutrum justo, a porta risus enim ut nulla. Duis aliquam sagittis ex. Vivamus volutpat rhoncus augue, rutrum fermentum risus fringilla a. Sed rutrum viverra molestie. Etiam efficitur odio in convallis posuere. Proin sollicitudin velit in felis ultricies blandit. Sed sed nibh orci. Vestibulum cursus diam urna, et mattis lectus commodo eget. Sed ornare ante ut scelerisque dapibus. Maecenas laoreet lectus vel risus sagittis, id faucibus tortor consectetur. In vel pharetra nisi. Cras tincidunt tempus consequat. Phasellus viverra leo ac metus egestas cursus sit amet eu velit.
+
+                Ut et consequat ipsum. Suspendisse ullamcorper, ante et elementum lobortis, mi sem ornare turpis, id gravida tortor mauris vitae risus. Nulla facilisi. Quisque leo ligula, rutrum vitae neque a, eleifend ullamcorper turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu euismod purus. Suspendisse non nibh at massa commodo laoreet laoreet at nisi. Vestibulum quam magna, pulvinar nec sapien id, facilisis aliquet felis. Suspendisse semper sem sapien, vel finibus neque tincidunt eget. Donec scelerisque quam et sapien tempus vehicula. In hac habitasse platea dictumst. Aliquam erat volutpat. Sed posuere commodo turpis eu pretium. Donec quis elementum neque. Etiam vitae mattis diam. Praesent ante diam, mollis a sodales vel, consectetur vitae enim.
+
+                Praesent quis aliquam libero, at finibus sem. Donec pellentesque lacinia tortor, in tempor nulla auctor vel. Cras maximus odio sit amet feugiat dignissim. Aliquam erat volutpat. Sed vestibulum massa nec metus congue dictum. Fusce sagittis sem ac enim dictum, id iaculis ligula vulputate. Ut faucibus placerat malesuada. Cras faucibus justo tristique velit cursus malesuada. Praesent sed justo in nisl ultricies accumsan. Cras id sem a lectus scelerisque suscipit ac eu velit. Pellentesque hendrerit, urna vitae accumsan laoreet, nisl purus venenatis massa, sit amet maximus eros justo non nisl. Donec ac neque eleifend, sodales sem consectetur, pharetra dolor. Cras varius sapien a ipsum efficitur interdum.
+
+                Quisque maximus ultrices aliquam. Sed ullamcorper purus est. Vivamus id elit eu lorem lobortis egestas. Nam auctor porta nulla, hendrerit fermentum est. Sed viverra auctor est. Etiam ac nunc quis ex vestibulum dapibus a ac justo. Aliquam ut enim risus. Nullam eget risus tempus, lacinia tortor eget, dapibus nibh. Donec non interdum dolor, ac facilisis elit. Quisque vehicula nulla et nisl accumsan tristique et sit amet velit.
+
+              </p>
+            </div>
+            <div class="carousel-cell">
+              <h2>Final Project Blog Ideas</h2>
+              <p>My idea is one of the following: 1. make a SAT quiz app that caters towards the user (I have worked on this for a company, however it was scrapped and now I will probably be re-hired to be lead developer for this project). or 2 and the most likely option: a scheduling app for those tenting in KVille. For both the basic components will be Vue and Firebase (Vue for connecting to Firebase and Firebase itself maybe for logging in but definitely for database storage). For the scehduling app (thats going to be the proposal from here on out). It needs to be a collaborative process (for up to twelve people) in which there will be a designated leader that can invite other tent members to sign up for their specific tent... but each person has their own schedule. Each tent member will fill out their availability by lets say just filling in buttons corresponding to times on certain days, and will do that on a weekly basis. However, I want the timing to be able to be variable, as some like 15 minute increments on determining availability and some like lets say an hour. Then everyones availability will be shown to the tent captain, maybe like in a google spreadsheet. The captain will assign a person to a time, which will both increment that person's total hours as well as the number of people present at that particular timing. Once the schedule has been completely filled out, it can then be published to a Calander displayed on the website to all members of the grouop, either made by myself or using Google Calander. I would also like to add a notification feature that will send alerts or an email to the individual alerting them when their scheduled slot is approaching... and the alerts need to be customizable as well.</p>
+            </div>
+            <div class="carousel-cell">
+                <h2>Link to Final Project</h2>
+                <p><a href="games/game.html">Click Here</a></p>
+            </div>
+        </div>
+          </div>
+        </div>
+        
+      
+    </div>
+
+
+
+    <!-- We will put our React component inside this div. -->
+
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    
+    <script src="scripts/jquery/jquery-3.3.1.min.js"></script>
+    <script src="scripts/jquery/isotope.pkgd.min.js"></script>
+    <script src="scripts/jquery/masonry.pkgd.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="bootstrap-4.2.1/dist/js/bootstrap.min.js"></script>
+    
+    <script src="scripts/jquery/flickity.pkgd.min.js"></script>
+    
+    
+    <script src="scripts/index_js.js"></script>
+
+    <!-- Load our React component. -->
+
+  </body>
+  <footer>
+    <div class="contact" id="bottom">
+      <h1><a href="mailto:jason.akers011@gmail.com">CONTACT</a></h1>
+    </div>
+    <div>
+      <p>&copy; 2019 Jason Akers</p>
+    </div>
+  </footer>
+</html>

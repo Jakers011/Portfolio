@@ -1,0 +1,304 @@
+@font-face{
+  font-family:"Lato";
+  src: url("/fonts/Lato/Lato-Regular.ttf");
+}
+
+@font-face{
+  font-family:"Lobster";
+  src: url("/fonts/Lobster/Lobster-Regular.ttf");
+}
+
+@font-face{
+  font-family:"Pacifico";
+  src: url("/fonts/Pacifico/Pacifico-Regular.ttf")
+}
+@font-face{
+  font-family:"Dancing";
+  src: url("/fonts/DancingScript/DancingScript-Regular.ttf")
+}
+
+@font-face{
+  font-family:"Just";
+  src: url("/fonts/JustAnotherHand/JustAnotherHand-Regular.ttf")
+}
+html{
+  background-color:#0B0C10;
+}
+
+nav{
+  text-align: center;
+}
+
+.navbar{
+  border-bottom: 5px solid #C5C6C7;
+}
+
+.navbar-custom{
+  background-color: #0B0C10;
+  opacity: 30%;
+}
+
+.navbar-toggler{
+  color: #C5C6C7;
+}
+
+.navbar-collapse{
+  background-color:  #0B0C10;
+}
+
+.nav-link{
+  color: #66FCF1;
+  border-radius: 5px;
+  font-family: 'Just Another Hand';
+  font-size: 25px;
+  transition: background-color 0.5s ease;
+  
+}
+
+.nav-link:hover{
+  color: #3500D3;
+  background-color: #A239CA;
+}
+
+.home-container{
+  position: absolute;
+  text-align: center;
+  color: white;
+}
+
+.row{
+  min-height: 94vh;
+}
+
+#about{
+  height: 85vh;
+  text-align: center;
+  background-image: linear-gradient(#0B0C10, #0B0C10 40%, #190061);
+  color: #3500D3;
+  font-family: 'Just Another Hand';
+}
+
+#portfolio{
+  background-color: #0C0032;
+  background-image: linear-gradient(#190061, #0B0C10 60%, #0B0C10);
+  display: flex;
+  padding-top: 25px;
+}
+
+.button-group button{
+  border-radius: 5px;
+  background-color: #C5C6C7;
+  color: #282828;
+  font-family:"Lato";
+}
+
+.button-group button:active{
+  background-color: #45A29E;
+}
+
+.centered {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.centered h4{
+  color: #C5C6C7;
+  font-family: 'Dancing Script';
+}
+
+.container-fluid{
+  margin-top: 160px;
+}
+
+.grid-sizer,
+.grid-item {
+  width: 33%;
+  min-width: 300px;
+  margin: .1em;
+  text-align: center;
+}
+
+.grid-item {
+  float: left;
+  padding: 1em;
+  border: 2px outset #C5C6C7;
+  border-radius: 5px;
+  transition: background-color 0.5s ease;
+  text-decoration: none;
+  color:#C5C6C7;
+}
+
+.grid-item:hover{
+  background-color: #3500D3;
+}
+
+/* 2 columns wide */
+.grid-item img {
+  display: block;
+  max-width: 100%;
+  max-height:300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+#about h1{
+  font: 400 100px/1.0 'Just Another Hand', Helvetica, sans-serif;
+  color: #3500D3;
+  text-shadow: 0px 3px 0px #240090, 0px 5px 0px #190061, 0px 7px 0px #240090, 0px 9px 0px #190061, 3px 8px 15px rgba(0,0,0,0.1), 3px 8px 5px rgba(0,0,0,0.3);
+}
+
+#headline{
+  max-height: 300px;
+}
+
+#profile img{
+  border-radius: 50%;
+  border: 2px solid #C5C6C7;
+}
+
+#portfolio h1{
+  padding-top: 60px;
+  text-align: center;
+  font: 200 80px/1.0 'Just Another Hand', Helvetica, sans-serif;
+  color: #C5C6C7;
+  text-shadow: 0px 3px 0px #1F2833, 0px 5px 0px #0B0C10, 0px 7px 0px #1F2833, 0px 9px 0px #0B0C10, 3px 8px 15px rgba(0,0,0,0.1), 3px 8px 5px rgba(0,0,0,0.3);
+}
+
+#home{
+  -webkit-animation:spin 6s linear infinite;
+    -moz-animation:spin 6s linear infinite;
+    animation:spin 6s linear infinite;
+}
+
+#filter{
+  height: 20px;
+  position: relative;
+  top: 0%;
+  text-align: center;
+}
+
+#masonry{
+  margin-top: 10px;
+  position: relative;
+  top:5%;
+  height: 70%;
+}
+
+#blog-header{
+  padding-top: 40px;
+  margin-top: 60px;
+  text-align: center;
+  font: 300 150px/1.0 'Just Another Hand', Helvetica, sans-serif;
+  color: #C5C6C7;
+  text-shadow: 0px 3px 0px #1F2833, 0px 5px 0px #0B0C10, 0px 7px 0px #1F2833, 0px 9px 0px #0B0C10, 3px 8px 15px rgba(0,0,0,0.1), 3px 8px 5px rgba(0,0,0,0.3);
+}
+
+#third{
+  background-image: linear-gradient(#0B0C10, #3500D3 40%, #3500D3);
+}
+
+#top{
+  position: absolute;
+  top: 0;
+}
+
+.carousel-cell{
+  width: 66%;
+  min-height: 60vh;
+  max-height: 60vh;
+  margin-right: 10px;
+  background-color: rgba(102,252,241,0.2);
+  border-radius: 5px;
+  overflow: auto;
+  border: 2px solid #C5C6C7;
+  transition: background-color 0.5s ease;
+}
+
+.carousel-cell:hover{
+  background-color: rgba(102,252,241,0.5);
+}
+
+.carousel-cell h2{
+  padding-top: 3px;
+  text-align: center;
+  font-family: 'Just Another Hand';
+  color: #282828;
+}
+.carousel-cell p{
+  text-align: justify;
+  display: block;
+  margin: 0px 5px 0px 5px;
+  font-family: "Lato";
+  color: #282828;
+}
+.carousel-cell p a{
+  color: #C5C6C7;
+}
+
+#info{
+  color: #66FCF1;
+}
+#info h2{
+  text-align: center;
+  margin-top: 10px;
+}
+
+#info p{
+  text-align: justify;
+  display: block;
+  margin: 0px 5px 0px 5px;
+  font-family: "Lato";
+  color: #C5C6C7;
+}
+
+footer{
+  background-color: #3500D3;
+  border-top: 5px solid #C5C6C7;
+  color: #C5C6C7;
+}
+
+footer .contact{
+  font-family: "Pacifico";
+  align-items: center;
+  text-align: center;
+}
+
+footer h1 a{
+  color: #C5C6C7;
+  text-decoration: none;
+  transition: color 0.5s ease;
+  transition: font-size 0.5s ease;
+}
+
+footer h1 a:hover{
+  color:#66FCF1;
+  font-size: 50px;
+  text-decoration: none;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+@media (min-width: 576px) {
+  .navbar {
+        height:60px;
+  }
+}
+@media (max-width:575px){
+  .navbar{
+    height: 130px;
+  }
+  .centered{
+    top:40%;
+  }
+  .home-container{
+    top: 0px;
+  }
+}
+
+
+

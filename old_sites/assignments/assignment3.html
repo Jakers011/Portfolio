@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment 3</title>
+    <style>
+        body {
+            max-width: 90%;
+            margin: 1em auto;
+            font-family: helvetica, sans-serif;
+        }
+        .description h2 {
+            margin: 1em auto;
+            text-align: center;
+        }
+        .description p {
+            max-width: 90%;
+            margin: 1em auto;
+            line-height: 1.2;
+        }
+        .main {
+            padding: 1em;
+            background-color: #f2f2f2;
+            border: 1px solid #000;
+            margin: 0.5em 0;
+        }
+        .problem {
+            margin: 0.78em 0;
+        }
+        
+        }
+        .problem p:nth-child(2) {
+            font-weight: bold;
+            padding: 1.5em;
+        }
+        .problem p:nth-child(3) {
+            font-weight: bold;
+            padding: 1.5em;
+        }
+        
+        .problem button {
+            padding: 0.4em;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="description">
+        <h2>Assignment 3: Arrays, Functions, Objects</h2>
+
+        <p>To complete this assignment, open up this document in a text editor and complete the questions in each ".problem" div</p>
+        <br>
+        <p>Anything you log to the console with <code>console.log()</code> will display in the JavaScript Console in your browser when you load this page.  The JavaScript Console is located in the Developer Console.  Right click on this page and choose "inspect".  In the toolbar that pops up at the right or bottom of your browser, choose the tab for "Console."  You will see anything logged to the console here.</p>
+        <br>
+        <p>Feel free to use resources like the <a href="https://www.w3schools.com/js/default.asp">w3 Schools JavaScript reference.</a></p>
+    </div>
+    <div class="main">
+        
+        <div class="problem 1">
+            <p>1. Put your code between the script tags below. Create an array with six values.</p>
+            <ul>
+            <li>A. Display the value in the third position in the array in the element with the id "answer1A" using document.getElementById()</li>
+            <li>B. console.log() the length of the array</li>
+            <li>C. Update the value in the fifth position in the array, and display it in the element with the id "answer1C"</li>
+            <li>D. console.log() the type of (typeof) value in the first position.</li></ul>
+            <p id="answer1A"></p>
+            <p id="answer1C"></p>
+            
+            <script>
+                //put your code for problem 1 here.
+              var random_array = [0, "zero", true, false, 1, "True"];
+              document.getElementById("answer1A").textContent = random_array[2];
+              random_array[4] = "updated";
+              document.getElementById("answer1C").textContent = random_array[4];
+              console.log("The type of value stored in the first position of the array is: " + typeof(random_array[0]));
+              
+                
+            </script>
+        </div>
+        <div class="problem 2">
+            <p>2.  Add your code below.</p>
+                <ul><li>A. Write a function with any name you'd like that returns the product of two parameters.</li>
+                   <li>B. create a button in html that invokes the function and returns the product of two numbers of your choosing to the element with the Id "answer2".</li> 
+            </ul>
+            
+            <!--Create your button-->
+          <button onclick="document.getElementById('answer2').textContent = prod(7,8)">What's 7*8</button>
+            
+            <p id="answer2"></p>
+            <script>
+            //write your code here.
+              function prod(a,b){
+                console.log("Prod was called.")
+                return a*b;
+              }
+                
+            </script>
+        </div>
+        
+         <div class="problem 3">
+             <p>3.  Complete the code between the script tags below.</p>  
+                <ul>
+                    <li>A. Create an object called "person" with three properties, "name", "age", "occupation", and a method called newJob() that takes one argument and updates the value of the "occupation" property.</li>
+                    <li>B. Update the value of "occupation" using the newJob method, and display this value in the element with the id "answer3" using document.getElementById.</li>
+             </ul>
+  
+            <p id="answer3"></p>
+            <script>
+                //write your code here.
+             var person = {
+               name:"Jason",
+               age: 24,
+               occupation: "student",
+               newJob(newOccupation){
+                 this.occupation = newOccupation;
+               }
+             };
+              person.newJob("A student in debt.")
+              document.getElementById("answer3").innerHTML = person.occupation;
+            
+            </script>
+             
+             <div class="problem 4">
+             <p>Complete the code below to display:</p>
+             <ul>
+                 <li>A. The "title" of this html document in the first button.</li>
+                 <li>B. The URL of this html document in the second button.</li>
+                 </ul>
+                 <p>Hint: use the .title and .URL properties of the document object.</p>
+             <button id="problem4A" onclick="displayTitle()">Problem 4A</button>
+             <button id="problem4B" onclick="displayURL()">Problem 4B</button>
+
+                 <script>
+                    
+                     function displayTitle() {
+                       //write your code here  
+                       document.getElementById("problem4A").textContent = document.title;
+                     }
+                     
+                     function displayURL() {
+                        //write your code here 
+                       document.getElementById("problem4B").textContent = document.URL;
+                     }
+                 </script>
+             </div>
+            
+        </div>
+    </div>
+    
+    
+    
+    </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Keep The Beat Away</title>
+    </head>
+    <link href="https://fonts.googleapis.com/css?family=Limelight|Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.dom.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.sound.js"></script>
+    <script type="text/javascript" src="p5.play.js"></script>
+    <script src="helper.js"></script>
+    <script src="app.js"></script>
+    <body>
+        <div class="container" id="container">
+            <div class="row">
+                <div id="songpreset" class="col-sm-4">
+                    <select class="form-control" id="otherfile"  data-style="btn-dark">
+                        <option selected disabled>Choose a preloaded song.</option>
+                        <option value="Kiss">Kiss Me - Easy (Recommended)</option>
+                        <option value="Rivers">Rivers in the Desert - Medium/Hard</option>
+                        <option value="Tar">Black Tar - Medium (Recommended)</option>
+                        <option value="Uncontrollable">Uncontrollable - Medium</option>
+                        <option value="Happier">Happier - Hard</option>
+                        <option value="Fire">Through the Fire and Flames - Impossible</option>
+                        <option value="Spiderman">Pizza Theme - Super Impossible (Visualizer Recommended)</option>
+                    </select>
+                </div>
+                <div id="songupload" class="col-sm-3">
+                    <input type="file" class="form-control-file" id="thefile" accept="audio/*" />
+                </div>
+                
+                <div id="slidecontainer" class="col-sm-3">
+                    <div id="slide">
+                        <p>EASY </p>
+                    </div>
+                    <div id="demo"></div>
+                </div>
+                <div id="check" class="col-sm-2"></div>
+            </div>
+            <div class="row">
+                <div id="start"></div>
+            </div>
+            <div class="row">
+                <div id="main">
+                </div>
+            </div>
+            
+            
+        </div>
+    </body>
+</html>

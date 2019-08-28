@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html>
+    <head><title>Javascript HTML DOM</title>
+        <style>
+            ul li {
+                padding: 1em;
+                border: 1px solid #000;
+                background: #c3c3c3;
+                color: #000;
+                margin: 0.4em;
+                list-style-type: none;
+                display: block;
+                width: 120px;
+            }
+            
+            ul {
+                list-style-type: none;
+            }
+            
+            button {
+                background-color: #555555;
+                border: none;
+                color: white;
+                padding: 10px 24px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 14px;
+            }
+            
+            .styled {
+                width: 80%;
+                margin: 1em auto;
+                line-height: 1.6;
+                font-size: 1.2em;
+                padding: 0.8em;
+                font-family: 'Helvetica', sans-serif;
+            }
+        
+        </style>
+    </head>
+<body>
+    <h1 style="text-align:center;width:40%;margin:1em auto;">JavaScript: HTML DOM</h1>
+    <p style="width:60%;margin:1em auto;">To view the contents (code and comments) of this file, save it as an .html file to your hard drive and open it up in a text editor.</p>
+    <p style="width:60%;margin:1em auto;">To view the output of this file, open up the working version saved on your hard drive in a web browser and view the output in the JavaScript console.</p>
+    
+    <button onclick="scrollFunction()">Scroll down</button>
+    
+    <div style="margin:1em auto;background:#c3c3c3;border:1px solid #000;padding:1em;">
+        <button onclick="firstFunction()">Click me.</button>
+        <p id="demo">This content will be replaced</p></div>
+    
+    <!--the div below uses the .appendChild example-->
+    <div id="demo2" style="margin:1em auto;background:#c3c3c3;border:1px solid #000;padding:1em;">
+        <button onclick="newFunction()">Click me.</button>
+    </div>
+    
+     <div id="demo3" style="margin:1em auto;background:#c3c3c3;border:1px solid #000;padding:1em;">
+         <button onclick="changeLI()">Click me.</button>
+         <button onclick="removeLI()">Now me.</button>
+         <button onclick="removeAnotherLI()">And me.</button>
+        <ul id="myMenu" class="menu"><li>One Thing</li><li>Another Thing</li><li>A Third Thing</li></ul>
+    
+    </div>
+    
+    <div id="demo3" style="margin:1em auto;background:#c3c3c3;border:1px solid #000;padding:1em;">
+         <button onclick="updateVal()">Click me.</button>
+         <button onclick="updateAnotherVal()">Click me.</button>
+        <p id="myParagraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas euismod tincidunt arcu at pellentesque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus at tellus vel metus bibendum mollis. Nunc et rutrum augue. Morbi gravida varius massa, quis placerat risus finibus sed. Curabitur iaculis enim eget leo feugiat sollicitudin. Nam maximus sit amet ante quis varius. Aenean nec finibus est, vitae venenatis nulla. Nulla in ultricies est, eu luctus massa. Vestibulum interdum facilisis nunc, vel facilisis libero volutpat eget. Phasellus nec arcu sit amet felis iaculis posuere sed et leo. Sed cursus ligula pretium mattis varius. Nullam dictum tristique lacus, sit amet fringilla erat volutpat in</p>
+    </div>
+    
+<script>
+    //The HTML DOM is a way of representing the html document as a series of nodes and elements. This is why we structure the HTML document with tags, and give those tags class and id attributes. 
+    //the DOM provides a "model" of the structure of webpages.
+    
+    //We've been using one example of the built-in methods that javascript comes with for traversing and manipulating the DOM with "document.getElementByID()"
+    
+    //for example, the function below changes the innerHTML of the element with the ID "demo", replacing it with a new string
+    function firstFunction() {
+        document.getElementById("demo")
+            var newP = createElement("p");
+            newP.innerHTML = "The HTML DOM is essentially an Application Programming Interface for working with the HTML Document. Javascript has several Objects and Methods for working with the DOM.";
+    }
+    
+    //as the above function shows, we can use the document or window elements to traverse the DOM and script events
+    
+    //what is this document element?
+    var myDocument = document;
+    //log the document to the console
+    console.log(myDocument);
+    console.log(typeof(myDocument));
+    //the function below uses the window method to create a popup that displays once the page loads
+    window.onload = function() {
+        window.alert('HELLO!');
+    }
+    
+    //could also use this window to scroll to a part of the page in coordinate values (x and y pixels)
+    function scrollFunction() {
+        //window.scrollTo(600,0);
+        
+        window.scrollTo({
+            top: 600,
+            behavior: 'smooth'
+        })
+    }
+    //there's also things to know about the window.
+    var theHeight = window.innerHeight;
+    console.log(theHeight);
+    
+    //or we could use .create Element to add elements to the page when a button is pressed.
+    function newFunction() {
+        //create a new p element and store it in a variable
+        var heading = document.createElement("p");
+        //create a new text node (string) and store it in a variable
+        var heading_text = document.createTextNode("I'm a new paragraph that appears");
+        //append the text node to the element
+        heading.appendChild(heading_text);
+        //append both to the document
+        document.getElementById("demo2").appendChild(heading);
+    }
+   
+    //with the DOM model, we're able to traverse the HTML document by referencing Elements and Tags
+    
+    //the code below references all of the li tags in the document, and 
+    function changeLI() {
+        var list = document.getElementsByTagName("LI");
+        //go through each one (this is an array) and change the style
+        var i; //declare variable i to hold our counter 
+        //for statement to loop through the array
+        for(i=0;i<list.length;i++) {
+            //for each item in the list, change the background color and font color
+            list[i].style.backgroundColor = "#317ef9";
+            list[i].style.color = "#fff";
+        }
+    }
+    
+    //or remove an item altogether
+    function removeLI() {
+        //get all the LI tags, hold in the variable list
+        var list = document.getElementsByTagName("LI");
+        //get the second value in that list (index val 1)
+        var removeItem = list[1];
+        //we can also utilize the fact that we're working with css - and change the css rules
+        //removing the item by setting the display property to none
+        removeItem.style.display = "none";
+    }
+    
+    //we could also have removed it entirely from the document with .removeChild
+    function removeAnotherLI() {
+        //get the element with the ID "myMenu" 
+        var elem = document.getElementById("myMenu");
+        //remove that element's child nodes, the one with the index value of 1.
+        
+        //first, log to see what's going on
+        console.log(elem);
+        console.log(elem.firstChild);
+        console.log(elem.childNodes[2]);
+        
+        
+        //var elemChild = elem.firstChild;
+        elem.removeChild(elem.childNodes[2]);
+        //note also, I'm calling the third item in the list, with index value = 2, because technically the other node is still there
+        console.log(elem.childNodes[1]);
+    
+    }
+    
+    //.getAttibute and .setAttribute can help us get and set new attribute values on any elements
+    function updateVal() {
+        var elem = document.getElementById("myParagraph");
+        //do this by setting a style attribute with the desired definitions
+        elem.setAttribute("style","background-color:#000;color:#fff;");
+    }
+    
+    function updateAnotherVal() {
+        var elem = document.getElementById("myParagraph");
+        //or by defining a class (see the top of this document for the .styled class), and setting that value to the class attribute.
+        elem.setAttribute("class", "styled");
+    }
+    
+    
+    
+    </script>
+    </body>
+</html>

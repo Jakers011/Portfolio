@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head><title>Pure JS Dropdown</title>
+    
+    <!--styling-->
+    <style>
+        body,html {
+        height:100%;
+        margin:0;
+        padding:0;
+        font-family:'Helvetica', sans-serif;
+        }
+        a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #000;
+        }
+        a:visited {
+            color: #000;
+        }
+        a:hover,a:active {
+            text-decoration: underline;
+        }
+      h1{
+        text-align: center;
+        font-family: sans-serif;
+      }
+        
+        .heading {
+            width: 80%;
+            margin: 1em auto;
+            text-align: center;
+        }
+        .container {
+        height:100%;
+        }
+        
+        .dropdown {
+            display:inline-block;
+            position:relative;
+            margin:15px;
+            font-size:16px;
+        }
+        .dropdown-button {
+          background:#3498db;
+          min-width:160px;
+          color:#fff;
+          letter-spacing:0.025rem;
+          box-sizing:border-box;
+          padding:10px 30px 10px 20px;
+          border-radius:0px;
+          position:relative;
+          cursor:pointer;
+          transition:background .3s ease;
+        }
+        .dropdown-button:hover {
+          background:#2980b9;
+          transition:background .3s ease;
+        }
+        .triangle {
+          font-size:50%;
+          position:absolute;
+          right:10px;
+          top:-2px;
+          bottom:0;
+          margin-top:auto;
+          margin-bottom:auto;
+          height:5px;
+          color:#fff;
+        }
+        
+        /*This is the active class--adding/removing it with the function creates the animation*/
+        .dropdown ul.active {
+          visibility:visible;/*make it visible*/
+          transition:all .3s ease;
+          transform:scaleY(1);
+          color:#333;
+          min-width: 100%;
+        }
+        .dropdown ul {
+        /*visibility: hidden makes this automatic when loading the doc*/
+          visibility:hidden;
+          overflow:hidden;
+          color:#fff;
+          transform-origin:left;
+          padding:0;
+          list-style:none;
+          transform:scaleX(0);
+          box-shadow:0px 2px 6px 0 rgba(0,0,0,0.2);
+            /*position absolutely so we can make sure it sits right under the button */
+          position:absolute;
+          left:100%;
+          margin-left:5px;
+          margin-top: 0px;
+          top:0%;/*100% from the top of its container*/
+          min-width:90%;
+          display: block;
+          width: 400px; /* tried to make it span 100% of the page but it doesnt ... bootstrap maybe? */
+          transition:all .3s ease;
+
+        }
+        .dropdown li {
+          background:#fff;
+          padding:8px 10px 8px 15px;
+          box-sizing:border-box;
+          cursor:pointer;
+          transition:background .2s ease;
+          position:relative;
+          display: inline-block;
+        }/*because their containing element is positioned absolutely, we position these relative to the container */
+        
+        .dropdown li.check {
+          background:green;
+        }
+      /*
+        .dropdown li.check:after {
+          content:'';
+          position:absolute;
+          height:15px;
+          width:3px;
+          background:#ccc;
+          top:0;
+          bottom:0;
+          margin-top:auto;
+          transform:rotate(40deg);
+          margin-bottom:auto;
+          right:15px;
+        }
+        .dropdown li.check:before {
+          content:'';
+          position:relative;
+          height:3px;
+          width:9px;
+          background:#ccc;
+          top:6px;
+          bottom:0;
+          margin-top:auto;
+          transform:rotate(40deg);
+          margin-bottom:auto;
+          right:19px;
+        }*/
+        .dropdown li:hover {
+          background:#f6f6f6;
+          transition:background .2s ease;
+        }
+        
+        .panel {
+            width: 100%;
+            visibility: hidden;
+            display: none;
+        }
+        
+        .panel p {
+            font-family: 'Helvetica', sans-serif;
+            font-size: 2em;
+            top: 50%;
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            position:absolute;
+            z-index: -1;/*make sure it sits behind the dropdown and doesn't interfere */
+        }
+        
+        .visiblePanel {
+            visibility: visible;
+            display: block;
+        }
+      .row{
+        display: flex;
+        flex-wrap: wrap;
+        padding:0 4px;
+      }
+      .column img{
+        margin-top: 8px;
+        vertical-align: middle;
+        max-width: 300px;
+      }
+      #titletext{
+        position: relative;
+        margin-bottom: 50px;
+      }
+      #Movies{
+        background-color: darkgray;
+      }
+      #TV{
+        background-color: beige;
+      }
+      #Games{
+        background-color: aqua;
+      }
+      #All{
+        background-color: floralwhite;
+      }
+    </style>
+
+    </head>
+    <body>
+        <div class='container'>
+            <div class='dropdown' id='dropdown-menu'>
+            <div class='dropdown-button'>Please Select</div>
+            <span class='triangle'>&#9660;</span><!--this is the triangle that appears next to the dropdown - it has a css class .triangle to animate-->
+            <ul class='dropdown-selection'>
+                <li>Movies</li>
+                <li>TV</li>
+                <li>Games</li>
+                <li>All</li>
+            </ul>
+        </div>
+          <div id="titletext">
+            <h1>ENTERTAINMENT</h1>
+          </div>
+            <div class="panel" id="Movies">
+                <h1>Movies</h1>
+              <div class="row">
+                <div class="column">
+                  <img src="../images/movies/Independence-Day-2-poster.jpg">
+                  <img src="../images/movies/large_f4Dup6awDfDqAHKgWqNJ2HFw1qN.jpg">
+                  <img src="../images/movies/MV5BMWI0Y2NhMzMtYTE5ZS00MDlhLTg0ZjEtMjAwZmEwNTc0ODc2XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg">
+                  <img src="../images/movies/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg">
+                  <img src="../images/movies/open-uri20150422-20810-m8zzyx_5670999f.webp">
+                  <img src="../images/movies/Your_Name_poster.png">
+                </div>
+              </div>
+            </div>
+               <div class="panel" id="TV">
+                <h1>TV Shows</h1>
+                 <div class="row">
+                  <div class = "column">
+                    <img src="../images/tv_shows/400px-Survivor.borneo.logo.png">
+                    <img src="../images/tv_shows/81SxG+OCDSL._SY445_.jpg">
+                    <img src="../images/tv_shows/A1uReOAZV8L._SL1500_.jpg">
+                    <img src="../images/tv_shows/AAAAAeGHTjEF2pSN6jKj_IUl8fRsmNCA8ir6uL7bhehG1OnLXRnKZlhGGsw27mqvG0dp8dMGaS-9Vqubm07_Bu18MjoMOETU4TwFaWpVa0tqeLcZs6jJHIZ97faSxYk31LYga5mNhs7lYg.jpg">
+                    <img src="../images/tv_shows/Black-ish-Season-1-ABC-Artwork-1200x1200-600x600.jpg">                
+                   </div>
+                 </div>
+            </div>
+               <div class="panel" id="Games">
+                <h1>Video Games</h1>
+                 <div class="row">
+                   <div class="column">
+                     <img src="../images/video_games/kh3.jpeg">
+                     <img src="../images/video_games/Pok%C3%A9mon_box_art_-_Red_Version.png">
+                     <img src="../images/video_games/Shin_Megami_Tensei_Persona_4.jpg">
+                     <img src="../images/video_games/ultimate.jpeg">
+                     <img src="../images/video_games/xeno.jpeg">
+                   </div>
+                 </div>
+            </div>
+            <div class="panel" id="All">
+                <h1>ALL</h1>
+              <div class="row">
+                <div class="column">
+                  <img src="../images/movies/Independence-Day-2-poster.jpg">
+                  <img src="../images/movies/large_f4Dup6awDfDqAHKgWqNJ2HFw1qN.jpg">
+                  <img src="../images/movies/MV5BMWI0Y2NhMzMtYTE5ZS00MDlhLTg0ZjEtMjAwZmEwNTc0ODc2XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg">
+                  <img src="../images/movies/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg">
+                  <img src="../images/movies/open-uri20150422-20810-m8zzyx_5670999f.webp">
+                  <img src="../images/movies/Your_Name_poster.png">
+                </div>
+                <div class = "column">
+                    <img src="../images/tv_shows/400px-Survivor.borneo.logo.png">
+                    <img src="../images/tv_shows/81SxG+OCDSL._SY445_.jpg">
+                    <img src="../images/tv_shows/A1uReOAZV8L._SL1500_.jpg">
+                    <img src="../images/tv_shows/AAAAAeGHTjEF2pSN6jKj_IUl8fRsmNCA8ir6uL7bhehG1OnLXRnKZlhGGsw27mqvG0dp8dMGaS-9Vqubm07_Bu18MjoMOETU4TwFaWpVa0tqeLcZs6jJHIZ97faSxYk31LYga5mNhs7lYg.jpg">
+                    <img src="../images/tv_shows/Black-ish-Season-1-ABC-Artwork-1200x1200-600x600.jpg">                
+                  </div>
+                <div class="column">
+                     <img src="../images/video_games/kh3.jpeg">
+                     <img src="../images/video_games/Pok%C3%A9mon_box_art_-_Red_Version.png">
+                     <img src="../images/video_games/Shin_Megami_Tensei_Persona_4.jpg">
+                     <img src="../images/video_games/ultimate.jpeg">
+                     <img src="../images/video_games/xeno.jpeg">
+                   </div>
+                
+              </div>
+            </div>
+    </div>
+    <script>
+        
+        /*Complete dropdown Code - */
+        
+        var activeDropdown = {};//create an object for the active dropdown
+        
+        //add an event listener to the element with the ID dropdown menu, and when we click on it, run this function showDropdown
+        document.getElementById('dropdown-menu').addEventListener('click',showDropdown);
+        
+        
+        //the showDropdown function
+        function showDropdown(event){
+            //first lets test a condition.  If the activeDropdown id ('dropdown-menu') is there, and is not equal to the event.target.id, remove the active class
+            //the active class will show/hide our dropdown -see css
+          if (activeDropdown.id && activeDropdown.id !== event.target.id) {
+            activeDropdown.element.classList.remove('active');
+              //let's see how this works, when?
+              //console.log('active removed');
+          }
+            
+          //checking if a list element was clicked, changing the inner button value
+            if (event.target.tagName === 'LI') {
+                //if you click on an LI tag, then make the innerHTML of that LI, the inner html of the activeDropdown button at the top of the UL
+                activeDropdown.button.innerHTML = event.target.innerHTML;
+              
+                //what is this value, check and log
+                //console.log(activeDropdown.button.innerHTML);//'selection'
+                //this where we are getting the 'One,''Two','Three' as values.
+                //these values match the strings in the 'id' parameter of our panel class
+                //test that against the ID of div with the class panel
+                var panels = document.getElementsByClassName("panel");
+                console.log(panels);
+                console.log(panels.length);//there are four of these divs
+                for(var i=0;i<panels.length;i++) {
+                    //test if the ID is the same as our choice
+                    if(panels[i].id == activeDropdown.button.innerHTML) {
+                        //if it is add the visiblePanel Class
+                        panels[i].classList.add('visiblePanel');
+                    } else {
+                        //otherwise remove it
+                        panels[i].classList.remove('visiblePanel');
+                    }
+                }
+              
+                //now loop through the List Items, and see if each contains "check" class, and if it does, remove that class
+                for (var i=0;i<event.target.parentNode.children.length;i++){
+                    if (event.target.parentNode.children[i].classList.contains('check')) {
+                    event.target.parentNode.children[i].classList.remove('check');
+                    }
+                }
+                //timeout here so the check is only visible after opening the dropdown again.  The check just shows us which panel we have picked
+                    window.setTimeout(function(){
+                  event.target.classList.add('check');
+                     },500)
+                }//end if(event.target.tagName === 'LI')
+            
+            //the code below actually applies the active class
+            //now loop through the children of 'dropdown-menu' again
+            for (var i = 0;i<this.children.length;i++){
+                //and if it's our dropdown-selection ul
+            if (this.children[i].classList.contains('dropdown-selection')){
+                //get the ID and store it in the active dropdown object
+                activeDropdown.id = this.id;
+                //get each child and store it in the dropdown object
+                activeDropdown.element = this.children[i];
+                //and finally, add the 'active' class
+                this.children[i].classList.add('active');
+             }
+                
+            //adding the dropdown-button to our object
+            else if (this.children[i].classList.contains('dropdown-button')){
+              activeDropdown.button = this.children[i];
+            }
+          }
+        }//end of the showDropdown function
+        
+        //finally we want to make sure that dropdown closes if we click anywhere else on the page, so bind an event to the window
+        window.onclick = function(event) {
+            //if we're just clicking anywhere, and not on the menu, target class list doesn't contain the 'dropdown-button' class
+          if (!event.target.classList.contains('dropdown-button')) {
+              //take away that active class, menu goes away
+            activeDropdown.element.classList.remove('active');
+          }
+        }
+        
+        
+        
+        
+        </script>
+    
+    
+    </body></html>

@@ -1,0 +1,45 @@
+html,body {
+    margin: 0;
+}
+
+.main {
+    font-family: 'Noto Sans', sans-serif;
+    width: 90%;
+    margin: 1em auto;
+}
+
+a {
+    color: #000;
+    text-decoration: underline;
+    transition: color 0.5s;
+}
+
+a:hover {
+    font-weight: bold;
+    color: #f21d5d;
+}
+
+.slide, .info-slide {
+    width: 90%;
+    margin: 2em auto;
+    padding: 1em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background: rgba(212, 212, 212, 0.74);
+    color: #000;
+    font-size: 1.2rem;
+    line-height: 2;
+    border-radius: 6px;
+}
+
+.info-slide {
+    display: block;
+    padding: 1em 2em;
+}
+.slide p {
+    width: 80%;
+    margin: 0.4em auto;
+}
+

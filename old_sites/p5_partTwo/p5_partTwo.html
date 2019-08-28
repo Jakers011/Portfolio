@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>p5 Part Two</title>
+    <!--include styles -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    
+    </head>
+    <body>
+        <div class="container-fluid">
+        <div class="main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="info-slide">
+                        <h2>P5 Assignment @ Bottom- More things... Plus MORE!!!</h2>
+                            <p>Demo today explores some key concepts for moving p5 beyond it's basic "setup" and "draw loops"</p>
+                            <p>First, each of these canvases below is created in the same sketch.js file, and attached to the divs in which they appear using the syntax <code>var my p5 = new p5('some sketch', 'container id')</code>. This is called <a href="">Instance mode</a> in P5.  <a href="https://www.youtube.com/watch?v=Su792jEauZg">Dan Shiffman has a great video on instance mode and namespacing in JavaScript.</a></p>
+                            <p>Open the <a href="sketch.js">sketch.js</a> file that this file calls to see how this works.</p>
+                            <p>We'll also be looking at <a href="">simple mouse interactions</a>, and controlling how animation happens over time with <a href="https://www.youtube.com/watch?v=CqDqHiamRHA&list=PLRqwX-V7Uu6ZmA-d3D0iFIvgrB5_7kB8H&index=5">setInterval()</a>.</p>
+                        </div>
+                    </div><!--col-->
+                </div><!--row-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="canvas1" class="slide">
+                        <!--The contents of the first sketch will appear here...-->
+                        </div>
+                    </div><!--col-->
+                </div><!--row-->
+                <div class="row">
+                    <div class="col-md-12">
+                      <h4>Click to switch between color and black and white.</h4>
+                        <div id="canvasX" class="slide">
+                        
+                        </div>
+                    </div><!--col-->
+                </div><!--row-->
+                <div class="row">
+                    <div class="col-md-12">
+                       <h4>Supposed to be snowflakes...</h4>
+                        <div id="canvas2" class="slide">
+                        
+                        </div>
+                    </div><!--col-->
+                </div><!--row-->
+                <div class="row">
+                    <div class="col-md-12">
+                      
+                        <div id="canvas3" class="slide">
+                    
+                        </div>
+                    </div><!--col-->
+                </div><!--row--> 
+                <div class="row">
+                        <div class="col-md-12">
+                          
+                            <div id="canvas4" class="slide">
+
+                            </div>
+                        </div><!--col-->
+                    </div><!--row--> 
+                <div class="row">
+                        <div class="col-md-12">
+                          <h4>Example 3: Mouse interactions</h4>
+                            <div id="canvas5" class="slide">
+
+                            </div>
+                        </div><!--col-->
+                    </div><!--row--> 
+            </div><!--main-->
+        </div><!--container-fluid-->
+        <!--bootstrap-->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        
+    <!--include p5 -->
+        <!--p5 main-->
+        <script src="js/p5.min.js"></script>
+        <!--p5 add-ons-->
+        <script src="js/addons/p5.dom.min.js"></script>
+        <script src="js/addons/p5.sound.min.js"></script>
+        <script src="sketch.js"></script>
+    </body>
+</html>
