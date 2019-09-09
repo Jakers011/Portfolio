@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Jakers011/Portfolio#readme",
   "dependencies": {
+    "anime": "^0.1.2",
     "animejs": "^3.1.0",
     "masonry-layout": "^4.2.2"
   }
