@@ -11,6 +11,8 @@
         <!-- Personal Webpage CSS -->
         <link rel="stylesheet" href="style.css">
         <!-- JS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -26,6 +28,7 @@
         <div class="demo-content home-screen align-center line-drawing-demo container">
             <h1 class="hello world">Hello World.</h1>
             <h1 class="hello intro" onload="change_text_size()"><span class="Jason">Jason Akers</span> is here.</h1>
+            <input type="button" class="more" value="Find Out More" onclick='document.getElementById("about").scrollIntoView({behavior:"smooth"})'/>
             <img src="images/texture.jpg">
             <svg class="name" width=100vw height=98vh viewbox="0 0 1920 1080">
       <g fill="none" fill-rule="evenodd" stroke="#C5C6C7" stroke-width="1" class="lines" opacity="0.25">
@@ -3818,35 +3821,65 @@
         </div>
             
         </section>
-        <section class="second">
+        <section class="second section" id="about">
+            <img src="images/grunge.jpg" class="background">
             <div class="aboutMe">
-                <h2>About Me</h2>
-                <div class="Container">
-                    <div class="row">
-                        
-                    </div>
-                    <div class="row">
-                        <div class="col-4">
+                <h2 class="title-text">About Me</h2>
+                <div class="container" id="info">
+                    <div class="row justify-content-center" id="rowinfo">
+                        <div class="col-12 col-md-3 infobox">
+                            <img src="images/dukelogo.png" id="dukelogo">
+                            <p id="paragraph">Graduated from Duke University in May 2019 with a Bachelor's of Science degree in Computer Science.</p>
                         </div>
-                        <div class="col-4">
+                        <div class="col-12 col-md-3 offset-md-1 infobox">
+                            <iframe src="https://giphy.com/embed/3ohhwCFeqncJDHsqic" width="480" height="320" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                            <p id="first">Need a programmer who has been tested through the adverse conditions of organizing twelve people to live in a tent for three months just to see a basketball game (on 4 occasions) all the while studying rigorously? </p><p id="last">That's me you are looking for (on the left).</p>
                         </div>
-                        <div class="col-4">
+                        <div class="col-12 col-md-3 offset-md-1 infobox">
+                            <img class="slide" src="images/js.png">
+                            <img class="slide" src="images/python.png">
+                            <img class="slide" src="images/java.png">
+                            <img class="slide" src="images/firebase.png">
+                            <img class="slide" src="images/vue.png">
+                            <img class="slide" src="images/html5.png">
+                            <p id="language">Proficient in Javascript, Java, Python, Vue, Firebase, P5.js, BeautifulSoup4, HTML, CSS, Bootstrap, Photoshop, Gimp, and more. </p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="third">
+        <section class="third section" id="projects">
+            <img class="background" src="images/grunge2.png">
             <div class="project">
-                <h2>Projects</h2>
-                <a href="old_sites/games/game.html">Game</a>
+                <h2 class="title-text">Projects</h2>
+                <div class="container" id="links">
+                    <div class="row" id="rowlinks">
+                            <div class="col-12 col-sm-6 linkbox vidbox1">
+                                <h3 id="vidtitle">Keep the Beat Away Game</h3>
+                                <video class="video" id="video" loop muted preload="auto">
+                                    <source src="images/testbeat.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="col-12 col-sm-6 linkbox bballbox">
+                                <h3 class="textcourse">Web App Development Coursework</h3>
+                                <iframe class="course" src="https://duke-compsci290-spring2018.github.io/assignments-portfolio-jda32/" href="https://duke-compsci290-spring2018.github.io/assignments-portfolio-jda32/"></iframe>
+                            </div>
+                    </div>
+                    <div class="row" id="descrow">
+                        <div class="col-12 description">
+                            <h3><a href="old_sites/games/game.html">Click here to play</a></h3>
+                            <p>This game was designed to be a fresh concept that relied heavily on music, resulting in a game with immense variance. The game utilizes the P5.js library for beat detection: on a beat an obstacle will spawn and then move with varying speed dependent on the amplitude of the song at that moment. Players must avoid colliding with the obstacles otherwise they will lose lives and eventually the game, with collision and animation based off of P5. Players increase their score by living past a beat and get points based on how many obstacles are on the screen, meaning that songs with higher tempo and higher beats per minute (bpm) will be more challenging and rewarding, and it is up to the player to find their optimal song.</p>
+                            
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
     </body>
     <!-- Helper libraries-->
     <script src="anime.min.js"></script>
-    
     
     <!-- My JS -->
     <script src="script.js"></script>
